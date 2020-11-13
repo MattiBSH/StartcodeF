@@ -168,13 +168,12 @@ function Home() {
     <>
       <h3>Use instructions</h3>
       <p>
-        In settings.js, change the URL's to match the current project.<br/>
-        Refactor navlinks to match project domain.<br/>
-        Page 1 diplayes fetched results from default endpoint in backend.<br/>
-        Page 2 is a blank slate. <br/>
-        Login page allows a user to login, if username and password is in the database.<br/>
-        Page 3 (after login) shows info about the user.<br/>
-        Page 4 (after login) shows info about admin user.
+        I choose to center my project around species.<br/>
+        I have used our start code to make it possible.<br/>
+        to get all species, species by id if you are an user<br/>
+        and add a species if you are an admin. <br/>
+        I also made a lot of test to make sure it worked.<br/>
+        
       </p>
     </>
   );
