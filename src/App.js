@@ -59,6 +59,9 @@ function App() {
         <Route path="/page2">
           <Placeholder />
         </Route>
+        <Route path="/ekstra">
+          <Extra/>
+        </Route>
         <Route path="/page3">
           <User />
         </Route>
@@ -131,6 +134,11 @@ function Header({ loggedIn, loginMsg }) {
           Page2
         </NavLink>
       </li>
+      <li>
+        <NavLink activeClassName="active" to="/ekstra">
+          Ekstra
+        </NavLink>
+      </li>
       {loggedIn && (
         <>
           <li>
@@ -179,8 +187,28 @@ function Home() {
   );
 }
 
+function Extra() {
+  return (
+    <>
+      <h3>en ekstra side, bum så har jeg modificeret den haha</h3>
+      <p>
+        
+        
+      </p>
+    </>
+  );
+}
+
 function Placeholder() {
-  return <h3>TODO</h3>;
+  const[arr,setArr]=useState([]);
+  useEffect(() => {
+    facade.fetchSchema(setArr);
+  }, []);
+  return (<div>
+    <p>{arr[0]}</p>
+    <h5>{arr[1]}</h5>
+    <h4>{arr[2]}</h4>
+  </div>);
 }
 
 function User() {

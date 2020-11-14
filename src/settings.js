@@ -8,6 +8,7 @@ const loginEndpoint = "/api/login";
 const all="/api/species/all"
 const id="/api/species/id"
 const add="/api/species/add"
+const schema="/api/species/schema"
 export {
     mainURL,
     userInfoEndpoint,
@@ -16,5 +17,6 @@ export {
     loginEndpoint,
     all,
     id,
-    add
+    add,
+    schema
 };

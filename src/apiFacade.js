@@ -3,7 +3,7 @@ import {
     userInfoEndpoint,
     adminInfoEndpoint,
     defaultEndpoint,
-    loginEndpoint,all,id,add} from "./settings";
+    loginEndpoint,all,id,add,schema} from "./settings";
 
  
 function handleHttpErrors(res) {
@@ -61,6 +61,12 @@ const fetchAll=(callback)=>{
    .then(handleHttpErrors)
    .then(data => {callback(data)})
 }
+const fetchSchema=(callback)=>{
+  const options = makeOptions("GET",true); 
+   return fetch(mainURL + schema, options)
+   .then(handleHttpErrors)
+   .then(data => {callback(data)})
+}
 const fetchById=(callback,id1)=>{
   const options = makeOptions("GET",true); 
    return fetch(mainURL + id+"/"+id1, options)
@@ -101,7 +107,8 @@ const makeOptions= (method,addToken,body) =>{
      fetchDefault,
      fetchAll,
      fetchById,
-     postSpecies
+     postSpecies,
+     fetchSchema
  }
 }
 const facade = apiFacade();
